@@ -42,5 +42,25 @@ public class GroceryStore {
             System.out.println(getProducts().get(i).toString());
         }
     }
-    
+    public void updateInventoryLevels(Sale sale) {
+        ArrayList<Product> soldItems = sale.getItemsInCart();
+        for (Product product : soldItems) { 
+            for (Product inventoryProduct : products) {
+                if (inventoryProduct.getName().equals(product.getName())) {
+                    //update inventory count by subtracting quantity sold
+                    int currentInventory = inventoryProduct.getInventory_count();
+                    int itemsSold = 0;                    
+                    for (Product item : soldItems) {
+                        if (item.getName().equals(product.getName())) {
+                            itemsSold++;
+                        }
+                    }
+                    int newInventoryCount = currentInventory - itemsSold;
+                    inventoryProduct.setInventory_count(newInventoryCount);
+                }
+            }
+        }
+    }
 }
+
+
