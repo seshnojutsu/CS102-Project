@@ -1,0 +1,46 @@
+import java.util.*;
+public class GroceryStore {
+    private ArrayList<Product> products;
+    private ArrayList<Sale> sales;
+
+    public GroceryStore() {
+        products = new ArrayList<Product>();
+        sales = new ArrayList<Sale>();
+    }
+
+    public void addSale(Sale sale) {
+        sales.add(sale);
+    }
+    
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public ArrayList<Sale> getSales() {
+        return sales;
+    }
+
+    //Method to add products.
+    public void addProduct(Product p){
+        products.add(p);
+    }
+    //Method to remove products.
+    public void removeProduct(Product product) {
+        products.remove(product);
+    }
+    //Method to search for a product.
+    public boolean searchProduct(String name){
+        for(int i = 0; i < getProducts().size(); i++){
+            if(getProducts().get(i).getName().equals(name))
+                return true;         
+        }
+        return false;
+    }
+    //Shows all the products available.
+    public void showProducts(){
+        for(int i = 0; i < getProducts().size(); i++){
+            System.out.println(getProducts().get(i).toString());
+        }
+    }
+    
+}
