@@ -1,17 +1,17 @@
 
 public class Product{
-    //Add Product ID.
     //Creating attributes for Class Product.
+    //Create methods and update the constructor for productId.
     private String name;
     private double price;
-    private int inventory_count;
-    private String productID;
+    private int inventoryCount;
+    private String productId;
 
     //Creating Constructors for Product.
-    public Product(String name, double price, int inventory_count) {    
+    public Product(String name, double price, int inventoryCount) {    
         setName(name);
         setPrice(price);
-        setInventory_count(inventory_count);
+        setInventoryCount(inventoryCount);
     }
 
     //Getters and setters for attributes.
@@ -35,20 +35,25 @@ public class Product{
         else throw new IllegalArgumentException("Price cannot be negative or 0");
     }
 
-    public int getInventory_count() {
-        return inventory_count;
+    public int getInventoryCount() {
+        return inventoryCount;
     }
     
     
-    public void setInventory_count(int inventory_count) {
+    public void setInventoryCount(int inventoryCount) {
         //Data validation, Cannot have a negative amount of items.
-        if(inventory_count > -1){
-            this.inventory_count = inventory_count;
+        if(inventoryCount > -1){
+            this.inventoryCount = inventoryCount;
         }
         else throw new IllegalArgumentException("Cannot have negative Inventory Count");
     }
     
-    
-    
+
+    @Override
+    public String toString() {
+        return "Product{" + "name=" + name + ", price=" + price + ", inventory count=" + inventoryCount + '}';
+    }
+     
     
 }
+       
