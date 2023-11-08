@@ -29,6 +29,8 @@ public class GroceryStore {
         products.remove(product);
     }
     //Method to search for a product.
+    //Change return type to Product.
+    //Use Map to find to product: key: Product ID, value: Product value
     public boolean searchProduct(String name){
         for(int i = 0; i < getProducts().size(); i++){
             if(getProducts().get(i).getName().equals(name))
