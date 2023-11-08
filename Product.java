@@ -1,9 +1,11 @@
 
 public class Product{
+    //Add Product ID.
     //Creating attributes for Class Product.
     private String name;
     private double price;
     private int inventory_count;
+    private String productID;
 
     //Creating Constructors for Product.
     public Product(String name, double price, int inventory_count) {    
